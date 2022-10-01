@@ -1,0 +1,35 @@
+from django.urls import path
+from Main import views
+from django.conf.urls.static import static
+from django.conf import settings
+urlpatterns = [
+    path('login/', views.signIn.as_view()),
+    path('changepassward/',views.CheckPassward.as_view()),
+    path('yuyue/',views.EpidmicOrder.as_view()),
+    path('healthy/',views.HealthyPost.as_view()),
+    path('websign/',views.loginWeb.as_view()),
+    path('webresgin/',views.getWebtoken.as_view()),
+    path('weblogout/',views.webLogout.as_view()),
+    path('shownews/',views.showNews.as_view()),
+    path('addnews/',views.addNews.as_view()),
+    path('editnews/',views.editNews.as_view()),
+    path('deletnews/',views.deletNews.as_view()),
+    path('addurgency/',views.urgencyPost.as_view()),
+    path('showurgency/',views.showUrgency.as_view()),
+    path('deleturgency/',views.deletUrgency.as_view()),
+    path('addjumin/',views.addJumin.as_view()),
+    path('showjumin/',views.showJumin.as_view()),
+    path('setjumin/',views.setJumin.as_view()),
+    path('deletjumin/',views.deletJumin.as_view()),
+    path('addselfcheck/',views.addSelfCheck.as_view()),
+    path('showzijian/',views.showzijian.as_view()),
+    path('deletzijian/',views.deletzijian.as_view()),
+    path('showhealthy/',views.showHealthy.as_view()),
+    path('addhealthy/',views.addhealthy.as_view()),
+    path('weborders/',views.webOrder.as_view()),
+    path('addstation/',views.addStation.as_view()),
+    path('showstation/',views.showStation.as_view()),
+    path('getstation/',views.getStation.as_view()),
+    path('getmaps/',views.getmaps.as_view()),
+    path('gethardware/',views.getHardware.as_view()),
+] + static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
